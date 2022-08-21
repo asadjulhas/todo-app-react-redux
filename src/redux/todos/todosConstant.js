@@ -1,0 +1,7 @@
+export const ADDTODO = 'ADDTODO';
+export const GETTODO = 'GETTODO';
+export const CHANGESTATUS = 'CHANGESTATUS';
+export const CHANGEPER = 'CHANGEPER';
+export const DELETETODOS = 'DELETETODOS';
+export const COMPLETEALL = 'COMPLETEALL';
+export const CLEARCOMPLETE = 'CLEARCOMPLETE';
