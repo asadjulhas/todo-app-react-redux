@@ -1,9 +1,12 @@
 import initialState  from "../initialState"
-import { ADDTODO, CHANGEPER, CHANGESTATUS, CLEARCOMPLETE, COMPLETEALL, DELETETODOS } from "./todosConstant"
+import { ADDTODO, CHANGEPER, CHANGESTATUS, CLEARCOMPLETE, COMPLETEALL, DELETETODOS, GETTODO } from "./todosConstant"
 
 
 const todosReducer = (state = initialState, action) => {
   switch (action.type) {
+    case GETTODO:
+      return action.payload;
+
     case ADDTODO:
       return [
         ...state,

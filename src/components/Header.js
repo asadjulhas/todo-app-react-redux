@@ -4,9 +4,10 @@ import doubleTick from "../assests/images/double-tick.png";
 import plus from "../assests/images/plus.png";
 import {useSelector, useDispatch} from 'react-redux'
 import { addTodos, clearAllCompleteTodos, todosComplete } from "../redux/todos/todosAction";
+import addTodosServer from "../redux/todos/thunk/addTodos";
 
 const Header = () => {
-  const todosList = useSelector(state => state.todosR);
+  const todosList = useSelector(state => state.todos);
   const maxId = todosList.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);
   const dispatch = useDispatch();
 const handleSubmit = (e) => {
@@ -20,7 +21,7 @@ const handleSubmit = (e) => {
     alert('Please add title');
     return;
   }
-  dispatch(addTodos(todo))
+  dispatch(addTodosServer(todo))
   e.target.reset();
 }
 

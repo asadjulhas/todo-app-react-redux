@@ -1,11 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SingleTodo from "./SingleTodo";
-import {useSelector} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
+import fetchTodos from "../redux/todos/thunk/fetchTodos";
 
 const TodoList = () => {
-  const todosList = useSelector(state => state.todosR);
+  const todosList = useSelector(state => state.todos);
   const filterR = useSelector(state => state.filterR.status);
   const filterColors = useSelector(state => state.filterR.colors);
+  console.log(todosList.todos)
+  console.log(todosList.length)
+  const dispatch = useDispatch()
+
+  useEffect(()=> {
+    dispatch(fetchTodos)
+  },[dispatch])
+
   const filterByStauys = () => {
     if(filterR === 'All') {
       return todosList

@@ -2,6 +2,7 @@ import React from 'react';
 import cancel from '../assests/images/cancel.png'
 import {useDispatch} from 'react-redux'
 import { changeTodoPriority, changeTodoStutas, deleteTodo } from '../redux/todos/todosAction';
+import deleteTodoServer from '../redux/todos/thunk/deleteTodo';
 
 const SingleTodo = (t) => {
   const {title, id, status, priority} = t.todo;
@@ -54,7 +55,7 @@ const SingleTodo = (t) => {
 <div onClick={()=>handlePriority(id, 'red')}  className="flex-shrink-0 h-4 w-4 rounded-full border-2 ml-auto cursor-pointer border-red-500 hover:bg-red-500"></div>
 </> : '' }
 
-            <img onClick={()=>dispatch(deleteTodo(id))}
+            <img onClick={()=>dispatch(deleteTodoServer(id))}
               src={cancel}
               className="flex-shrink-0 w-4 h-4 ml-2 cursor-pointer"
               alt="Cancel"

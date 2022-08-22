@@ -3,7 +3,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import { filterByColor, filterByStatus } from '../redux/filter/filterAction';
 
 const Footer = () => {
-  const todosList = useSelector(state => state.todosR);
+  const todosList = useSelector(state => state.todos);
   const filterR = useSelector(state => state.filterR.status);
   const filterColor = useSelector(state => state.filterR.colors);
   const dispatch = useDispatch();

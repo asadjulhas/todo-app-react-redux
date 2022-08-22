@@ -1,9 +1,16 @@
-import { ADDTODO, CHANGEPER, CHANGESTATUS, CLEARCOMPLETE, COMPLETEALL, DELETETODOS } from "./todosConstant"
+import { ADDTODO, CHANGEPER, CHANGESTATUS, CLEARCOMPLETE, COMPLETEALL, DELETETODOS, GETTODO } from "./todosConstant"
 
-export const addTodos = (title) => {
+export const addTodos = (todoText) => {
   return {
     type: ADDTODO,
-    payload: title,
+    payload: todoText,
+  }
+}
+
+export const getTodos = (todos) => {
+  return {
+    type: GETTODO,
+    payload: todos
   }
 }
 
