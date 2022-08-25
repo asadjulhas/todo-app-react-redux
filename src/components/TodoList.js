@@ -4,11 +4,9 @@ import {useDispatch, useSelector} from 'react-redux'
 import fetchTodos from "../redux/todos/thunk/fetchTodos";
 
 const TodoList = () => {
-  const todosList = useSelector(state => state.todos);
+  const todosList = useSelector(state => state.todos.filter(f => f.status === true));
   const filterR = useSelector(state => state.filterR.status);
   const filterColors = useSelector(state => state.filterR.colors);
-  console.log(todosList.todos)
-  console.log(todosList.length)
   const dispatch = useDispatch()
 
   useEffect(()=> {
@@ -24,6 +22,7 @@ const TodoList = () => {
       return todosList.filter(f => f.status === false)
     }
   }
+  const unCompletedTodos = todosList.filter(f => f.status === true)
   return (
     <div className="mt-2 text-gray-700 text-sm max-h-[300px] overflow-y-auto">
      {todosList && filterByStauys().filter(todo => {

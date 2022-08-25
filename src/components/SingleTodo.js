@@ -3,19 +3,21 @@ import cancel from '../assests/images/cancel.png'
 import {useDispatch} from 'react-redux'
 import { changeTodoPriority, changeTodoStutas, deleteTodo } from '../redux/todos/todosAction';
 import deleteTodoServer from '../redux/todos/thunk/deleteTodo';
+import updateTodoStutas from '../redux/todos/thunk/updateTodoStutas';
+import updatePriority from '../redux/todos/thunk/updatePriority';
 
 const SingleTodo = (t) => {
   const {title, id, status, priority} = t.todo;
   const dispatch = useDispatch();
 
   const handlePriority = (id, priority) => {
-    dispatch(changeTodoPriority(id, priority));
+    dispatch(updatePriority(id, priority));
   }
 
   return (
     <div className="flex justify-start items-center p-2 hover:bg-gray-100 hover:transition-all space-x-4 border-b border-gray-400/20 last:border-0">
             <div className={`rounded-full bg-white border-2 border-gray-400 w-5 h-5 flex flex-shrink-0 justify-center items-center mr-2 ${status ? '' : 'border-green-500 focus-within:border-green-500'}`}>
-              <input onChange={()=>dispatch(changeTodoStutas(id))}
+              <input onChange={()=>dispatch(updateTodoStutas(id, status))}
                 type="checkbox"
                 className="opacity-0 absolute rounded-full cursor-pointer"
               />
@@ -28,7 +30,7 @@ const SingleTodo = (t) => {
             </div>
 
             <div className={`select-none flex-1 ${status ? '' : 'line-through'}`}>
-             <span className='cursor-pointer' onClick={()=>dispatch(changeTodoStutas(id))}>{title}</span>
+             <span className='cursor-pointer' onClick={()=>dispatch(updateTodoStutas(id, status))}>{title}</span>
             </div>
 
 { priority === 'red' ? <>

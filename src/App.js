@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList";
 import Footer from "./components/Footer";
 import { Provider } from "react-redux";
 import store from "./store";
+import TodoListCompleted from "./components/TodoListCompleted";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
         <TodoList/>
         <hr className="mt-4" />
         <Footer/>
+      </div>
+      <div className="w-full max-w-3xl shadow-lg rounded-lg p-6 bg-white">
+        <TodoListCompleted/>
+        
       </div>
     </div>
     </Provider>

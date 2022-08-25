@@ -1,45 +1,27 @@
 {
   "todos": [
     {
-      "id": 1,
-      "title": "Learn Vanilla JavaScript",
-      "status": true,
-      "priority": "yellow"
-    },
-    {
-      "id": 2,
-      "title": "Learn Modern ES6+ JavaScript",
-      "status": true,
-      "priority": "red"
-    },
-    {
       "id": 3,
       "title": "Learn React JS",
-      "status": true,
-      "priority": "yellow"
+      "status": false,
+      "priority": "red"
     },
     {
+      "id": 5,
       "title": "Learn Redux Basics",
       "status": true,
-      "id": 4,
       "priority": "red"
     },
     {
-      "title": "Learn Redux fundamentals",
-      "status": true,
-      "id": 5,
-      "priority": "red"
-    },
-    {
-      "title": "learn Redux",
-      "status": false,
-      "id": 6,
-      "priority": "red"
-    },
-    {
-      "title": "Learn Redux Toolkit",
-      "status": false,
       "id": 7,
+      "title": "Learn Modern ES6+ JavaScript",
+      "status": false,
+      "priority": "red"
+    },
+    {
+      "id": 8,
+      "title": "Learn Vanilla JavaScript",
+      "status": true,
       "priority": "red"
     }
   ]
